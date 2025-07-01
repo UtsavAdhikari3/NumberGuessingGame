@@ -3,7 +3,6 @@ import random
 def generate_random_num():
     return random.randrange(1,11)
 
-
 def guess_num(choice):
     random_number = generate_random_num()
 
