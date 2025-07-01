@@ -1,16 +1,29 @@
 import random
+import time
 
 def generate_random_num():
     return random.randrange(1,11)
 
+
+def start_timer():
+    return time.perf_counter()
+
+def stop_timer(start_time):
+    elapsed = time.perf_counter() - start_time
+    return elapsed
+
 def guess_num(choice):
     random_number = generate_random_num()
+    start = start_timer()
+
 
     if choice == 1:
         for i in range(10):
             guess_num = int(input("Enter your guess: "))
             if guess_num == random_number:
                 print(f"Congratulations! You guessed the correct number in {i+1} attempts.")
+                time_in_seconds = stop_timer(start)
+                print(f"It took you {time_in_seconds:.2f} to guess the number correctly")
                 keep_playing = int(input("""Do you want to keep playing?
 1. Yes
 0. No: """))
@@ -27,6 +40,8 @@ def guess_num(choice):
             guess_num = int(input("Enter your guess: "))
             if guess_num == random_number:
                 print(f"Congratulations! You guessed the correct number in {i+1} attempts.")
+                time_in_seconds = stop_timer(start)
+                print(f"It took you {time_in_seconds:.2f} to guess the number correctly")
                 keep_playing = int(input("""Do you want to keep playing?
 1. Yes
 0. No: """))
@@ -43,6 +58,8 @@ def guess_num(choice):
             guess_num = int(input("Enter your guess: "))
             if guess_num == random_number:
                 print(f"Congratulations! You guessed the correct number in {i+1} attempts.")
+                time_in_seconds = stop_timer(start)
+                print(f"It took you {time_in_seconds:.2f} to guess the number correctly")
                 keep_playing = int(input("""Do you want to keep playing?
 1. Yes
 0. No: """))
