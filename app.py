@@ -3,39 +3,44 @@ import random
 def generate_random_num():
     return random.randrange(1,101)
 
-   
-
 
 def guess_num(choice):
-    guess_num = int(input("Enter your guess: "))
     random_number = generate_random_num()
 
     if choice == 1:
         for i in range(10):
+            guess_num = int(input("Enter your guess: "))
             if guess_num == random_number:
-                print(f"Congratulations! You guessed the correct number in {i} attempts.")
+                print(f"Congratulations! You guessed the correct number in {i+1} attempts.")
+                break
             elif guess_num > random_number:
                 print(f"Incorrect! The number is less than {guess_num}.")
             elif guess_num < random_number:
                 print(f"Incorrect! The number is greater than {guess_num}.")
     elif choice == 2:
         for i in range(5):
+            guess_num = int(input("Enter your guess: "))
             if guess_num == random_number:
-                print(f"Congratulations! You guessed the correct number in {i} attempts.")
+                print(f"Congratulations! You guessed the correct number in {i+1} attempts.")
+                break
             elif guess_num > random_number:
                 print(f"Incorrect! The number is less than {guess_num}.")
             elif guess_num < random_number:
                 print(f"Incorrect! The number is greater than {guess_num}.")
     elif choice == 3:
         for i in range(3):
+            guess_num = int(input("Enter your guess: "))
             if guess_num == random_number:
-                print(f"Congratulations! You guessed the correct number in {i} attempts.")
+                print(f"Congratulations! You guessed the correct number in {i+1} attempts.")
+                break
             elif guess_num > random_number:
                 print(f"Incorrect! The number is less than {guess_num}.")
             elif guess_num < random_number:
                 print(f"Incorrect! The number is greater than {guess_num}.")
     else:
         print("Sorry but your choice is out of bounds.")
+
+
 def main():
     print("""Welcome to the Number Guessing Game!
 I'm thinking of a number between 1 and 100.
@@ -62,3 +67,7 @@ Let's start the game!""")
         print("""Great! You have selected the Hard difficulty level.
 Let's start the game!""")
         guess_num(choice)
+
+
+if __name__ == "__main__":
+    main()
