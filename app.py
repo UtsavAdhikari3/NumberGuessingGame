@@ -1,7 +1,7 @@
 import random
 
 def generate_random_num():
-    return random.randrange(1,101)
+    return random.randrange(1,11)
 
 
 def guess_num(choice):
@@ -12,26 +12,43 @@ def guess_num(choice):
             guess_num = int(input("Enter your guess: "))
             if guess_num == random_number:
                 print(f"Congratulations! You guessed the correct number in {i+1} attempts.")
+                keep_playing = int(input("""Do you want to keep playing?
+1. Yes
+0. No: """))
+                if keep_playing == 1:
+                    main()
                 break
             elif guess_num > random_number:
                 print(f"Incorrect! The number is less than {guess_num}.")
             elif guess_num < random_number:
                 print(f"Incorrect! The number is greater than {guess_num}.")
+
     elif choice == 2:
         for i in range(5):
             guess_num = int(input("Enter your guess: "))
             if guess_num == random_number:
                 print(f"Congratulations! You guessed the correct number in {i+1} attempts.")
+                keep_playing = int(input("""Do you want to keep playing?
+1. Yes
+0. No: """))
+                if keep_playing == 1:
+                    main()
                 break
             elif guess_num > random_number:
                 print(f"Incorrect! The number is less than {guess_num}.")
             elif guess_num < random_number:
                 print(f"Incorrect! The number is greater than {guess_num}.")
+
     elif choice == 3:
         for i in range(3):
             guess_num = int(input("Enter your guess: "))
             if guess_num == random_number:
                 print(f"Congratulations! You guessed the correct number in {i+1} attempts.")
+                keep_playing = int(input("""Do you want to keep playing?
+1. Yes
+0. No: """))
+                if keep_playing == 1:
+                    main()
                 break
             elif guess_num > random_number:
                 print(f"Incorrect! The number is less than {guess_num}.")
